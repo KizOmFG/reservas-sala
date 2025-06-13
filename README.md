@@ -6,8 +6,8 @@ Este proyecto tiene como objetivo desarrollar una solución de software que perm
 
 ## 👨‍💻👩‍💻 Integrantes del equipo
 
-- Jose María (Frontend - Angular)
-- [Nombre del segundo estudiante] (Backend - ASP.NET Core)
+- Jose María
+- [Cristofer Alfaro] 
 
 ## 🛠️ Tecnologías Utilizadas
 
