@@ -1,8 +1,8 @@
-# Sistema de Reservas de Salas y Laboratorios
+# Sistema de ventas y cotizacion - Muebleria DiCrea
 
 ## 🎯 Objetivo del Proyecto
 
-Este proyecto tiene como objetivo desarrollar una solución de software que permita gestionar de forma eficiente las reservas de salas o laboratorios en una institución. El sistema será desarrollado en colaboración por dos estudiantes utilizando herramientas modernas de desarrollo y un sistema de control de versiones como Git y GitHub.
+Este proyecto tiene como objetivo desarrollar una solución de software que permita gestionar de forma eficiente las ventas y cotizaciones de muebles hacia clientes carpinteros. El sistema será desarrollado en colaboración por dos estudiantes utilizando herramientas modernas de desarrollo y un sistema de control de versiones como Git y GitHub.
 
 ## 👨‍💻👩‍💻 Integrantes del equipo
 
