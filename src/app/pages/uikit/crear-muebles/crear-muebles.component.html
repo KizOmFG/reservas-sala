@@ -1,0 +1,164 @@
+<p-tabView [(activeIndex)]="activeTabIndex">
+  <!-- TAB 1: Búsqueda de muebles -->
+  <p-tabPanel header="Buscar Muebles">
+    <div class="flex flex-col gap-4">
+      <p-panel header="Filtros de búsqueda">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div>
+            <label>Tipo</label>
+            <p-dropdown
+              [options]="tipos"
+              [(ngModel)]="filtro.idTipo"
+              placeholder="Seleccione tipo"
+              optionLabel="nombre"
+              optionValue="id">
+            </p-dropdown>
+          </div>
+
+          <div>
+            <label>Color</label>
+            <p-dropdown
+              [options]="colores"
+              [(ngModel)]="filtro.idColor"
+              placeholder="Seleccione color"
+              optionLabel="nombre"
+              optionValue="id">
+            </p-dropdown>
+          </div>
+
+          <div>
+            <label>Tamaño</label>
+            <p-dropdown
+              [options]="tamanos"
+              [(ngModel)]="filtro.idTamano"
+              placeholder="Seleccione tamaño"
+              optionLabel="descripcion"
+              optionValue="id">
+            </p-dropdown>
+          </div>
+
+          <div>
+            <label>Material</label>
+            <p-dropdown
+              [options]="materiales"
+              [(ngModel)]="filtro.idMaterial"
+              placeholder="Seleccione material"
+              optionLabel="nombre"
+              optionValue="id">
+            </p-dropdown>
+          </div>
+        </div>
+
+        <div class="flex justify-end gap-2 mt-4">
+          <p-button label="Buscar" icon="pi pi-search" class="p-button-primary" (onClick)="buscarMuebles()"></p-button>
+          <p-button label="Agregar Mueble" icon="pi pi-plus" class="p-button-success" (onClick)="activeTabIndex = 1"></p-button>
+        </div>
+      </p-panel>
+
+      <p-panel header="Resultados de Búsqueda">
+        <p-table [value]="muebles" [paginator]="true" [rows]="5" responsiveLayout="scroll">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Nombre</th>
+              <th>Tipo</th>
+              <th>Color</th>
+              <th>Tamaño</th>
+              <th>Material</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Fecha</th>
+              <th>Descripción</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-mueble>
+            <tr>
+              <td>{{ mueble.nombre }}</td>
+              <td>{{ mueble.tipo }}</td>
+              <td>{{ mueble.color }}</td>
+              <td>{{ mueble.tamano }}</td>
+              <td>{{ mueble.material }}</td>
+              <td>{{ mueble.precio | currency }}</td>
+              <td>{{ mueble.stock }}</td>
+              <td>{{ mueble.fechaCreacion | date }}</td>
+              <td>{{ mueble.descripcion }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </p-panel>
+    </div>
+  </p-tabPanel>
+
+  <!-- TAB 2: Registrar Mueble -->
+  <p-tabPanel header="Registrar Mueble">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label>Nombre</label>
+        <input pInputText [(ngModel)]="nuevoMueble.nombre" class="w-full" />
+      </div>
+
+      <div>
+        <label>Tipo</label>
+        <p-dropdown
+          [options]="tipos"
+          [(ngModel)]="nuevoMueble.idTipo"
+          placeholder="Seleccione tipo"
+          optionLabel="nombre"
+          optionValue="id">
+        </p-dropdown>
+      </div>
+
+      <div>
+        <label>Color</label>
+        <p-dropdown
+          [options]="colores"
+          [(ngModel)]="nuevoMueble.idColor"
+          placeholder="Seleccione color"
+          optionLabel="nombre"
+          optionValue="id">
+        </p-dropdown>
+      </div>
+
+      <div>
+        <label>Tamaño</label>
+        <p-dropdown
+          [options]="tamanos"
+          [(ngModel)]="nuevoMueble.idTamano"
+          placeholder="Seleccione tamaño"
+          optionLabel="descripcion"
+          optionValue="id">
+        </p-dropdown>
+      </div>
+
+      <div>
+        <label>Material</label>
+        <p-dropdown
+          [options]="materiales"
+          [(ngModel)]="nuevoMueble.idMaterial"
+          placeholder="Seleccione material"
+          optionLabel="nombre"
+          optionValue="id">
+        </p-dropdown>
+      </div>
+
+      <div>
+        <label>Precio</label>
+        <input pInputText type="number" [(ngModel)]="nuevoMueble.precio" class="w-full" />
+      </div>
+
+      <div>
+        <label>Stock</label>
+        <input pInputText type="number" [(ngModel)]="nuevoMueble.stock" class="w-full" />
+      </div>
+
+      <div class="md:col-span-2">
+        <label>Descripción</label>
+        <textarea pInputTextarea [(ngModel)]="nuevoMueble.descripcion" rows="3" class="w-full"></textarea>
+      </div>
+
+      <div class="md:col-span-2 flex justify-end mt-4">
+        <p-button label="Guardar" icon="pi pi-save" class="p-button-primary" (onClick)="registrarMueble()"></p-button>
+        <p-button label="Volver" icon="pi pi-arrow-left" class="p-button-secondary ml-2" (onClick)="activeTabIndex = 0"></p-button>
+      </div>
+    </div>
+  </p-tabPanel>
+</p-tabView>

@@ -14,13 +14,15 @@ import { TableDemo } from './tabledemo';
 import { OverlayDemo } from './overlaydemo';
 import { TreeDemo } from './treedemo';
 import { MenuDemo } from './menudemo';
+import { SolicitarReservaComponent } from './solicitar-reserva/solicitar-reserva.component';
+import { CrearMueblesComponent } from './crear-muebles/crear-muebles.component';
 
 export default [
     { path: 'button', data: { breadcrumb: 'Button' }, component: ButtonDemo },
     { path: 'charts', data: { breadcrumb: 'Charts' }, component: ChartDemo },
     { path: 'file', data: { breadcrumb: 'File' }, component: FileDemo },
-    { path: 'formlayout', data: { breadcrumb: 'Form Layout' }, component: FormLayoutDemo },
-    { path: 'input', data: { breadcrumb: 'Input' }, component: InputDemo },
+    { path: 'formlayout', data: { breadcrumb: 'Form Layout' }, component: SolicitarReservaComponent },
+    { path: 'input', data: { breadcrumb: 'Input' }, component: CrearMueblesComponent },
     { path: 'list', data: { breadcrumb: 'List' }, component: ListDemo },
     { path: 'media', data: { breadcrumb: 'Media' }, component: MediaDemo },
     { path: 'message', data: { breadcrumb: 'Message' }, component: MessagesDemo },
