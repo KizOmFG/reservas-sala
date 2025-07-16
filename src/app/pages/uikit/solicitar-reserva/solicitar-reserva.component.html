@@ -1,63 +1,63 @@
 <!-- Panel de Filtros -->
 <p-panel header="Búsqueda de Reservas" [toggleable]="true" class="mb-4">
-  <form [formGroup]="formBusqueda" class="flex flex-col md:flex-row md:items-end gap-4">
-    <div class="flex-1">
-      <label for="codigoReserva" class="block text-sm font-medium">Código de Reserva</label>
-      <input pInputText formControlName="codigoReserva" id="codigoReserva" placeholder="Ingrese código de reserva" class="w-full" />
-    </div>
+    <form [formGroup]="formBusqueda" class="flex flex-col md:flex-row md:items-end gap-4">
+        <div class="flex-1">
+            <label for="codigoReserva" class="block text-sm font-medium">Código de Reserva</label>
+            <input pInputText formControlName="codigoReserva" id="codigoReserva" placeholder="Ingrese código de reserva" class="w-full" />
+        </div>
 
-    <div class="flex-1">
-      <label for="codigoPago" class="block text-sm font-medium">Código de Pago</label>
-      <input pInputText formControlName="codigoPago" id="codigoPago" placeholder="Ingrese código de pago" class="w-full" />
-    </div>
+        <div class="flex-1">
+            <label for="codigoPago" class="block text-sm font-medium">Código de Pago</label>
+            <input pInputText formControlName="codigoPago" id="codigoPago" placeholder="Ingrese código de pago" class="w-full" />
+        </div>
 
-    <div class="flex-1">
-      <label for="fechaInicio" class="block text-sm font-medium">Fecha Inicio</label>
-      <input type="date" pInputText formControlName="fechaInicio" class="w-full" />
-    </div>
+        <div class="flex-1">
+            <label for="fechaInicio" class="block text-sm font-medium">Fecha Inicio</label>
+            <input type="date" pInputText formControlName="fechaInicio" class="w-full" />
+        </div>
 
-    <div class="flex-1">
-      <label for="fechaFin" class="block text-sm font-medium">Fecha Fin</label>
-      <input type="date" pInputText formControlName="fechaFin" class="w-full" />
-    </div>
+        <div class="flex-1">
+            <label for="fechaFin" class="block text-sm font-medium">Fecha Fin</label>
+            <input type="date" pInputText formControlName="fechaFin" class="w-full" />
+        </div>
 
-    <div class="flex items-end gap-2">
-      <button pButton label="Buscar" icon="pi pi-search" class="p-button-success" (click)="buscar()"></button>
-<button pButton label="Exportar Excel" icon="pi pi-file-excel" class="p-button-primary" (click)="exportarExcel()"></button>
-    </div>
-  </form>
+        <div class="flex items-end gap-2">
+            <button pButton label="Buscar" icon="pi pi-search" class="p-button-success" (click)="buscar()"></button>
+            <button pButton label="Exportar Excel" icon="pi pi-file-excel" class="p-button-primary" (click)="exportarExcel()"></button>
+        </div>
+    </form>
 </p-panel>
 
 <!-- Panel de Resultados -->
 <p-panel header="Resultados de Búsqueda" [toggleable]="true">
-  <p-table [value]="reservas" class="p-datatable-sm" [paginator]="true" [rows]="10">
-    <ng-template pTemplate="header">
-      <tr>
-        <th>Código Reserva</th>
-        <th>Código Pago</th>
-        <th>Cliente</th>
-        <th>DNI</th>
-        <th>Celular</th>
-        <th>Mueble</th>
-        <th>Color</th>
-        <th>Tamaño</th>
-        <th>Cantidad</th>
-        <th>Fecha</th>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-reserva>
-      <tr>
-        <td>{{ reserva.codigoReserva }}</td>
-        <td>{{ reserva.codigoPago }}</td>
-        <td>{{ reserva.nombre }} {{ reserva.apellido }}</td>
-        <td>{{ reserva.dni }}</td>
-        <td>{{ reserva.celular }}</td>
-        <td>{{ reserva.tipoMueble }}</td>
-        <td>{{ reserva.color }}</td>
-        <td>{{ reserva.tamano }}</td>
-        <td>{{ reserva.cantidad }}</td>
-        <td>{{ reserva.fechaCreacion | date: 'short' }}</td>
-      </tr>
-    </ng-template>
-  </p-table>
+    <p-table [value]="reservas" class="p-datatable-sm" [paginator]="true" [rows]="10">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Código Reserva</th>
+                <th>Código Pago</th>
+                <th>Cliente</th>
+                <th>DNI</th>
+                <th>Celular</th>
+                <th>Mueble</th>
+                <th>Color</th>
+                <th>Tamaño</th>
+                <th>Cantidad</th>
+                <th>Fecha</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-reserva>
+            <tr>
+                <td>{{ reserva.codigoReserva }}</td>
+                <td>{{ reserva.codigoPago }}</td>
+                <td>{{ reserva.nombre }} {{ reserva.apellido }}</td>
+                <td>{{ reserva.dni }}</td>
+                <td>{{ reserva.celular }}</td>
+                <td>{{ reserva.tipoMueble }}</td>
+                <td>{{ reserva.color }}</td>
+                <td>{{ reserva.tamano }}</td>
+                <td>{{ reserva.cantidad }}</td>
+                <td>{{ reserva.fechaCreacion | date: 'short' }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
 </p-panel>
